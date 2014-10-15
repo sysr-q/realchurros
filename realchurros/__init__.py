@@ -96,8 +96,8 @@ class Churros(object):
 
 			now = datetime.now()
 			if now < self.events[0][0]:
-				print(now, "<", self.events[0][0])
-				gevent.sleep(5)
+				#print(now, "<", self.events[0][0])
+				gevent.sleep(10)
 				continue
 
 			event = self.events.pop(0)
