@@ -49,6 +49,9 @@ class Churros(object):
 			"s" if hours != 1 else ""
 		)
 
+	def starting(self):
+		return "Some Event is starting!"
+
 	def finished(self):
 		return "Some Event is over!"
 
@@ -82,6 +85,8 @@ class Churros(object):
 		for i in xrange(self.prewarn):
 			delta = timedelta(hours=i+1)  # +1 since i starts at 0
 			self.events.insert(0, (event - delta, self.name(i+1)))
+		# Event begins!
+		self.events.append((event, self.starting())
 		# Add 'event finished' tweet.
 		self.events.append((event + timedelta(hours=self.length),
 							self.finished()))
