@@ -86,7 +86,7 @@ class Churros(object):
 			delta = timedelta(hours=i+1)  # +1 since i starts at 0
 			self.events.insert(0, (event - delta, self.name(i+1)))
 		# Event begins!
-		self.events.append((event, self.starting())
+		self.events.append((event, self.starting()))
 		# Add 'event finished' tweet.
 		self.events.append((event + timedelta(hours=self.length),
 							self.finished()))
